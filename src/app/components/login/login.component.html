@@ -1,16 +1,18 @@
 <!-- login.component.html -->
 <div class="login">
-        <form class="custom-form" method="post">
+        <form class="custom-form" method="get">
           <h1>Login</h1>
           <input
             type="text"
             name="user"
+            [(ngModel)]="user"
             placeholder="Login User"
             required="required"
           />
           <input
             type="password"
-            name="password"
+            name="pass"
+            [(ngModel)]="pass"
             placeholder="Password"
             required="required"
           />

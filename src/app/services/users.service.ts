@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http'
 import { userInterface } from '../models/users'
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,11 @@ export class UsersService {
     return this.http.get(`${this.API}/Login/${user}/${pass}`);
   }
 
-  registerUser (userNew: userInterface){
-    return this.http.post(`${this.API}/Register`,userNew);
+  public registerUser (userNew: userInterface): Observable<userInterface> {
+    console.log('-> ',userNew);
+    const res = this.http.post<userInterface>(`${this.API}/Register`,userNew);
+    console.log('-> RESPUESTA ->  ',res);
+    return res;
   }
 
   deleteUser (user: string){

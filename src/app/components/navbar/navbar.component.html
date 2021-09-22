@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
+    <div class="container-fluid r">
       <a class="navbar-brand" routerLink="/Home" routerLinkActive="active">FaceMatch</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,9 +10,6 @@
             <a class="nav-link active" routerLink="/Home" routerLinkActive="active">Home
               <span class="visually-hidden">(current)</span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/Profile" routerLinkActive="active">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/Friends" routerLinkActive="active">Friends</a>
@@ -31,10 +28,19 @@
             </div>
           </li>
         </ul>
-        <form class="d-flex">
+        <div class="d-flex">
+          <!--<img class="imagen" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"/>-->
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/Profile" routerLinkActive="active">PROFILE</a>
+            </li>
+          </ul>
+        </div>
+
+        <!--<form class="d-flex">
           <input class="form-control me-sm-2" type="text" placeholder="Search">
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form>-->
       </div>
     </div>
   </nav>

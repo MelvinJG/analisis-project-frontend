@@ -1,45 +1,61 @@
 <!-- register.component.html -->
 <div class="register">
-    <form class="custom-form" method="post">
+    <div class="custom-form">
       <h1>Register</h1>
       <input
         type="text"
+        [(ngModel)]="User.fullName"
         name="fullName"
         placeholder="Name"
         required="required"
       />
       <input
         type="text"
+        [(ngModel)]="User.lastName"
         name="lastName"
         placeholder="Last Name"
         required="required"
       />
       <input
         type="email"
+        [(ngModel)]="User.mail"
         name="mail"
         placeholder="Email"
         required="required"
       />
       <input
         type="text"
-        name="user"
+        [(ngModel)]="User.userName"
+        name="userName"
         placeholder="Login User"
         required="required"
       />
       <input
         type="password"
-        name="password"
+        [(ngModel)]="pass"
+        name="pass"
         placeholder="Password"
         required="required"
       />
       <input
         type="password"
-        name="password"
+        [(ngModel)]="pass2"
+        name="pass2"
         placeholder="Repeat the password"
         required="required"
       />
+      <div class="container caja">
+        <h4 style="text-align: center; padding-top: 5px;padding-bottom: 5px;">Photo for your profile.</h4>
+        <div class="row">
+          <div class="image col-md-3" *ngFor = 'let av of avatar'>
+            
+              <img src="{{av.img}}" class="imagen card-img-top" (click)="getAvatarID(av.id)" />
+            
+          </div>
+      </div>
+      </div>
       <button (click)="register()">Register</button>
-    </form>
+    </div>
   </div>
 <!--
       <input

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { UsersService } from '../../services/users.service'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,14 +10,35 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public user: string = '';
+  public pass: string = '';
+
+  constructor(private router: Router, private userService: UsersService) { }
+
+  
 
   ngOnInit(): void {
+    
   }
 
   public onClickMe(){
-    alert('BIENVENIDO');
-    this.router.navigate(['/Home']);
+    if(this.user == '' || this.pass == ''){
+      alert('INGRESE USUARIO Y CONTRASEÑA INCORRECTA');
+    }
+    else{
+      this.userService.getUserLogin(this.user, this.pass).subscribe(
+        res => {
+          console.log(res)
+          if(res == true){ 
+            alert(`BIENVENIDO ${this.user}`);
+            this.router.navigate(['/Home']);
+          }
+          else{
+            alert('USUARIO O CONTRASEÑA INCORRECTA');
+          }
+        }
+      );
+    }    
   }
 
 }
