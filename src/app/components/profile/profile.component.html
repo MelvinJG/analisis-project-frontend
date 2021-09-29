@@ -1,15 +1,68 @@
 <app-navbar></app-navbar>
-<div class="container">
-
-    <div class="row">
-        <div class="col-md-6 l">
-            <img class="imagen" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"/>
+<div style="padding: 20px;" class="container">
+    <div class="row" style="padding: 20px;">
+        <div class="col-md-6">
+            <img class="imagen" src="{{sources}}"/>
         </div>
-        <div class="col-md-6 r">
-            <h1>MY PROFILE</h1>
+        <div class="col-md-6">
+            <h1>{{User.userName}}</h1>
         </div>
     </div>
-
-    
-    <button routerLink="/AboutMe" routerLinkActive="active">Acerca de Mi</button>
+    <div style="text-align: center; padding-top: 2%;" class="row">
+        <h5>Mi Información</h5>
+        <div class="col-md-6 caja">
+            <p>Nombre Completo:</p>
+            <h4>{{User.fullName}}</h4>
+        </div>
+        <div class="col-md-6 caja">
+            <p>Correo:</p>
+            <h4>{{User.mail}}</h4>
+        </div>
+    </div>
+    <div style="text-align: center;" class="row">
+        <div class="col-md-6 caja">
+            <p>Fecha de Nacimiento:</p>
+            <h4>{{User.birthday == null ? 'Dato No Ingresado' : User.birthday | date: 'yyyy-MM-dd'}}</h4>
+        </div>
+        <div class="col-md-6 caja">
+            <p>Estado civil:</p>
+            <h4>{{User.relationShip == null ? 'Dato No Ingresado' : User.relationShip}}</h4>
+        </div>
+    </div>
+    <div style="text-align: center; padding-top: 2%;" class="row">
+        <h5>Más de mi</h5>
+        <div class="col-md-6 caja">
+            <p>Hobbys:</p>
+            <h4>{{User.hobbies == null ? 'Hobby No Ingresado' : User.hobbies}}</h4>
+        </div>
+        <div class="col-md-6 caja">
+            <p>Musica Favorita:</p>
+            <h4>{{User.music == null ? 'Musica No Ingresada' : User.music}}</h4>
+        </div>
+    </div>
+    <div style="text-align: center; padding-top: 2%;" class="row">        
+        <h5>Mis padres</h5>
+        <div class="col-md-6 caja">
+            <p>Papá:</p>
+            <h4>{{User.father == null ? 'Datos Vacios' : User.father}}</h4>
+        </div>
+        <div class="col-md-6 caja">
+            <p>Mamá:</p>
+            <h4>{{User.mother == null ? 'Datos Vacios' : User.mother}}</h4>
+        </div>
+    </div>
+    <div style="text-align: center; padding-top: 2%;" class="row">
+        <h5>Mi Ubicación</h5>        
+        <div class="col-md-6 caja">
+            <p>Pais:</p>
+            <h4>{{User.country == null ? 'Sin Pais' : User.country}}</h4>
+        </div>
+        <div class="col-md-6 caja">
+            <p>Ciudad:</p>
+            <h4>{{User.city == null ? 'Sin Ciudad' : User.city}}</h4>
+        </div>
+    </div>
+    <div class="container" style="text-align: center; padding: 4%;">
+        <button routerLink="/AboutMe" routerLinkActive="active">Modificar mi información</button>
+    </div>
 </div>

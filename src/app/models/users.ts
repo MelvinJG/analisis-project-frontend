@@ -1,10 +1,9 @@
 export interface userInterface {
     id?: number;
-    userName: string;
-    fullName: string; 
-    lastName: string;
-    pass: string;
-    mail: string;
+    userName?: string;
+    fullName?: string;
+    pass?: string;
+    mail?: string;
     avatar?: number;
     birthday?: Date;
     relationShip?: string;

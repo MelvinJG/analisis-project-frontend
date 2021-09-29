@@ -16,7 +16,11 @@ export class UsersService {
     return this.http.get(`${this.API}/Login/${user}/${pass}`);
   }
 
-  public registerUser (userNew: userInterface): Observable<userInterface> {
+  getUserByUser (user: string){
+    return this.http.get(`${this.API}/${user}`);
+  }
+
+  registerUser (userNew: userInterface): Observable<userInterface> {
     console.log('-> ',userNew);
     const res = this.http.post<userInterface>(`${this.API}/Register`,userNew);
     console.log('-> RESPUESTA ->  ',res);
@@ -27,7 +31,7 @@ export class UsersService {
     return this.http.delete(`${this.API}/Login/${user}`);
   }
 
-  updateUser (user: string, userUp: userInterface){
+  updateUser (user: any, userUp: userInterface){
     return this.http.put(`${this.API}/Update/${user}`,userUp);
   }
 }

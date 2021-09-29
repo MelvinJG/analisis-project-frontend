@@ -19,8 +19,7 @@ export class RegisterComponent implements OnInit {
 
   User: userInterface = {    
     userName: '',
-    fullName: '',
-    lastName: '',    
+    fullName: '',   
     pass: '',    
     mail: '',    
     avatar: 0
@@ -43,7 +42,7 @@ export class RegisterComponent implements OnInit {
   }
 
   public register(){
-    if(this.User.fullName == '' || this.User.userName == ' ' || this.User.mail == ' ' || this.User.lastName == ' ' || this.User.pass == ' '){
+    if(this.User.fullName == '' || this.User.userName == ' ' || this.User.mail == ' ' || this.User.pass == ' '){
       alert('Ingrese Sus Datos');
     }
     else{
@@ -51,9 +50,17 @@ export class RegisterComponent implements OnInit {
         this.User.pass = this.pass;
         this.User.avatar = this.idAvatar;
         console.log(this.User);
-        this.usersService.registerUser(this.User);
-        alert(`Usuario ${this.User.userName} Registrado`);
-        this.router.navigate(['/Login']);
+        this.usersService.registerUser(this.User).subscribe(
+          res => {
+            console.log(res);
+            alert(`Usuario ${this.User.userName} Registrado`);
+            this.router.navigate(['/Login']);
+          },
+          err => {
+            console.log(err);
+            alert('No se puede Actulizar los datos')
+          }
+        );        
       }
       else{
         alert("Contraseñas inivalidas");

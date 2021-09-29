@@ -40,13 +40,18 @@
     font-size: 0.875rem;
     color: #ffffff;
     font-weight: bold;
-    background-color: #bcd8c1;
+    background-color: rgb(115, 218, 137);
     width: 100%;
     display: block;
     padding: 0.875rem 1rem;
     border-radius: 1.5rem;
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     cursor: pointer;
+  }
+
+  .custom-form button:hover{
+    border-color: #aee9b9;  
+    box-shadow: 0px 0px 30px rgb(75, 139, 89);
   }
 
   .caja{

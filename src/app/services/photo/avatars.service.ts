@@ -12,5 +12,8 @@ export class AvatarsService {
     return this.http.get(`http://localhost:3000/Avatars`);
   }
 
+  getAvatarsByID (id: number){
+    return this.http.get(`http://localhost:3000/Avatars/${id}`);
+  }
 }
 
