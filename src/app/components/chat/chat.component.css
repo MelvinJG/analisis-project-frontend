@@ -1,0 +1,15 @@
+.img{
+    width: 30px;
+    height: auto;
+}
+
+.card{
+    width: 13rem;
+}
+
+.mensaje{
+    background-color: rgb(126, 126, 223);
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+}

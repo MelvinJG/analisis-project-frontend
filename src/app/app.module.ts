@@ -13,7 +13,9 @@ import { FriendsComponent } from './components/friends/friends.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 
-import { UsersService } from './services/users.service'
+import { UsersService } from './services/users.service';
+import { ChatComponent } from './components/chat/chat.component';
+import { PeopleComponent } from './components/people/people.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { UsersService } from './services/users.service'
     NavbarComponent,
     FriendsComponent,
     ProfileComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    ChatComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,

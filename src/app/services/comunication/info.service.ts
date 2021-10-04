@@ -6,6 +6,8 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 export class InfoService {
 
   Name: string = "";
+  chatName: string= '';
+  IdChatName: any;
 
   @Output() UserName: EventEmitter<any> = new EventEmitter();
   constructor() { }
@@ -16,5 +18,21 @@ export class InfoService {
 
   getName(){
     return this.Name;
+  }
+
+  setChatName(namechat: string){
+    this.chatName = namechat;
+  }
+
+  getChatName(){
+    return this.chatName;
+  }
+
+  setIdChatName(Idnamechat: string){
+    this.IdChatName = Idnamechat;
+  }
+
+  getIdChatName(){
+    return this.IdChatName;
   }
 }

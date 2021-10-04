@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <div class="col-sm-2">
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                <h3 class="card-title">Amigos</h3>
+            </div>
+            <div class="card-body" *ngFor = 'let friend of Friends'>                
+                    <div class="row" style="border-bottom: 1px solid black;">
+                        <div class="col-xs-2 col-md-2">
+                            <img src="{{friend.img}}" class="img img-responsive">
+                        </div>
+                        <div class="col-xs-8 col-md-10">
+                            <p class="img-responsive">{{friend.userName}}</p>
+                        </div>
+                        <button class="btn btn-primary">
+                            <i class="fa fa-envelope"></i>
+                        </button>                                                                                      
+                    </div>                 
+            </div>            
+        </div>        
+    </div>
+    <div class="col-sm-10">
+        <div class="container" style="padding-bottom: 20px;">
+            <h1 style="text-align:center; padding-bottom: 20px;">Chat {{ChatUser}}</h1>
+            <div class="d-flex">                        
+                <input [(ngModel)]="Mensaje.mensage" class="form-control me-sm-2" type="text" placeholder="Message" autocomplete="off">
+                <button class="btn btn-success my-2 my-sm-0" type="submit" (click)="sendMessage()">Send</button>            
+            </div>
+        </div>       
+        <div class="container" *ngFor = 'let mesage of ChatMesage'>
+            <p class="mensaje">
+                {{mesage.mensage}}
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,96 +1,64 @@
 <app-navbar></app-navbar>
-<div class="container">
+<div class="container" style="margin-bottom: 25px;">
     <h1>MY FRIENDS</h1>
     <form class="d-flex">
         <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>    
+    <div class="row" style="margin-top: 25px; margin-bottom: 25px; text-align: center;">
+        <div class="col-3" *ngFor = 'let friend of Friends'>
+            <div class="card" style="margin-bottom: 25px;">
+                <div class="container" >
+                    <div class="row">
+                        <div class="col" style="background-color: red;">
+                            <button class="btn">
+                                <i class="far fa-trash-alt" style="color:white;"></i>
+                            </button>                 
+                        </div>
+                        <div class="col" style="background-color: blue;">
+                            <button class="btn" (click)="gotoChat(friend.userName, friend.idFriend)">
+                                <i class="fa fa-envelope" style="color:white;"></i>
+                            </button>                             
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">                    
+                    <img src="{{friend.img}}" class="img img-responsive">                    
+                    <h5 class="card-title">{{friend.userName}}</h5>
+                    <h6 class="card-subtitle mb-2" style="color: green;">Friend</h6>
+                </div>
+            </div>
+        </div>      
+    </div>
+</div>
 
-<div class="card bg-light mb-3">
-    <div class="card-header">
-        <h3 class="card-title">Amigos</h3>
+<!-- 
+    COLUMNAS DE 5
+
+    <div class="row" style="margin-top: 25px; text-align: center;">
+        <div class="col">
+            <div class="card">
+                <div class="container">
+                    <div class="row">
+                        <div class="col" style="background-color: red;">
+                            <button class="btn">
+                                <i class="far fa-trash-alt" style="color:white;"></i>
+                            </button>                 
+                        </div>
+                        <div class="col" style="background-color: blue;">
+                            <button class="btn">
+                                <i class="fa fa-envelope" style="color:white;"></i>
+                            </button>                             
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">                    
+                    <h5 class="card-title">MelvinJG</h5>
+                    <h6 class="card-subtitle mb-2" style="color: green;">Friend</h6>
+                </div>
+            </div>
+        </div>        
     </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXWRhkgBl5L3cvK5HU6r19l6YVViWYiGca8kzzZMDOm0bZ1-rb7mzfdFYYb1QBkoKS3Y&usqp=CAU" class="img img-responsive">
-            </div>
-            <div class="col-xs-10 col-md-10">
-                <p class="img-responsive">Melvin Misael Joj</p>
-            </div>           
-        </div>
-    </div>
-</div>
-</div>
+
+-->

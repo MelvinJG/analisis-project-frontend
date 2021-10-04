@@ -12,6 +12,10 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
+  getAllUsers(user: string){
+    return this.http.get(`${this.API}/People/${user}`);
+  }
+
   getUserLogin (user: string, pass: string){
     return this.http.get(`${this.API}/Login/${user}/${pass}`);
   }
@@ -20,10 +24,8 @@ export class UsersService {
     return this.http.get(`${this.API}/${user}`);
   }
 
-  registerUser (userNew: userInterface): Observable<userInterface> {
-    console.log('-> ',userNew);
-    const res = this.http.post<userInterface>(`${this.API}/Register`,userNew);
-    console.log('-> RESPUESTA ->  ',res);
+  registerUser (userNew: userInterface): Observable<userInterface> {    
+    const res = this.http.post<userInterface>(`${this.API}/Register`,userNew);    
     return res;
   }
 

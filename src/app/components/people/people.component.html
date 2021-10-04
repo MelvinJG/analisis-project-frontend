@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h1>More People</h1>
+    <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="row" style="margin-top: 25px; margin-bottom: 25px; text-align: center;">
+        <div class="col-3" *ngFor = 'let persona of Personas'>
+            <div class="card" style="margin-bottom: 25px;">
+                <button class="btn btn-success">
+                    <i class="fas fa-user-plus"></i>
+                </button>
+                <div class="card-body">                    
+                    <img src="{{persona.img}}" class="img img-responsive">                    
+                    <h5 class="card-title">{{persona.userName}}</h5>
+                    <h6 class="card-subtitle mb-2" style="color: green;">Not Friend</h6>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+
+</div>

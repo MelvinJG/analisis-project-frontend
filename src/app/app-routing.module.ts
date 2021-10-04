@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FriendsComponent } from './components/friends/friends.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { PeopleComponent } from './components/people/people.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -42,8 +45,17 @@ const routes: Routes = [
     path: 'AboutMe',
     component: AboutMeComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'Chat',
+    component: ChatComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'People',
+    component: PeopleComponent,
+    pathMatch: 'full'
   }
-  
 ];
 
 @NgModule({
