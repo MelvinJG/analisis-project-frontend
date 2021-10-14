@@ -13,7 +13,7 @@
                         <div class="col-xs-8 col-md-10">
                             <p class="img-responsive">{{friend.userName}}</p>
                         </div>
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary" (click)="CargarMensaje(friend.userName, friend.idFriend)">
                             <i class="fa fa-envelope"></i>
                         </button>                                                                                      
                     </div>                 

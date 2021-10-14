@@ -20,8 +20,15 @@ export class FriendsService {
     return this.http.get(`${this.API}/Chat/${userName}`);
   }
 
-  SendMessage(sendmesage: mesage): Observable<mesage>{
-    console.log('MENSAJE',sendmesage);
+  SendMessage(sendmesage: mesage): Observable<mesage>{    
     return this.http.post<mesage>(`${this.API}/SendMesage`,sendmesage);
   }
+
+  getMisSolicitudes(MyID: number){
+    return this.http.get(`${this.API}/Solicitudes/${MyID}`);
+  }
+
+  getMisSolicitudesEnviadas(userName: string){
+    return this.http.get(`${this.API}/EnviadaSolicitud/${userName}`);
+  }  
 }

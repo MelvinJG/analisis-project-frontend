@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="container" style="margin-bottom: 25px;">
+    <h1>Solicitudes Recibidas</h1> 
+    <div class="row" style="margin-top: 25px; margin-bottom: 25px; text-align: center;">
+        <div class="col-3" *ngFor = 'let friend of Friends'>
+            <div class="card" style="margin-bottom: 25px;">
+                <div class="container" >
+                    <div class="row">
+                        <button class="col btn btn-danger btn-block" style="width: 127px;">
+                            <i class="fas fa-user-times"></i>
+                        </button>
+                        <button class=" col btn btn-success btn-block" style="width: 127px;">
+                            <i class="fas fa-user-check"></i>
+                        </button>
+                      
+                    </div>
+                </div>
+                <div class="card-body">                    
+                    <img src="{{friend.img}}" class="img img-responsive">                    
+                    <h5 class="card-title">{{friend.userName}}</h5>
+                    <h6 class="card-subtitle mb-2" style="color: green;">Solicitud</h6>
+                </div>
+            </div>
+        </div>      
+    </div>
+    <hr>
+    <h1>Solicitudes Enviadas</h1>
+    <div class="row" style="margin-top: 25px; margin-bottom: 25px; text-align: center;">
+        <div class="col-3" *ngFor = 'let persona of Personas'>
+            <div class="card" style="margin-bottom: 25px;">
+                <button class="btn btn-danger btn-block" style="width: 259px;">
+                    <i class="fas fa-window-close"> Cancelar</i>
+                </button>
+                <div class="card-body">                    
+                    <img src="{{persona.img}}" class="img img-responsive">                    
+                    <h5 class="card-title">{{persona.userName}}</h5>
+                    <h6 class="card-subtitle mb-2" style="color: green;">Solicitud Enviada</h6>
+                </div>
+            </div>
+        </div>      
+    </div>
+</div>
+
+<!--  <div class="col" style="background-color: red;">
+                            <button class="btn">
+                                <i class="fas fa-user-times" style="color:white;">1</i>
+                            </button>                 
+                        </div>
+                        <div class="col" style="background-color: rgb(50, 223, 50);">
+                            <button class="btn">
+                                <i class="fas fa-user-check" style="color:white;">2</i>
+                            </button>                             
+                        </div>-->

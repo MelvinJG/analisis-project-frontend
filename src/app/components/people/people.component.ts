@@ -13,6 +13,7 @@ export class PeopleComponent implements OnInit {
   Personas: any = [];
 
   getUsers(){
+    //
     this.usersService.getAllUsers(this.info.getName()).subscribe(
       res => {
         console.log(res)

@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container" *ngFor = 'let post of thePosts'>
+    <div class="row bordes" style="background-color: white;" >
+        <div class="col-sm-1" style="padding-top: 5px;">
+            <img class="imagenPeque" src="{{post.img}}">
+        </div>
+        <div class="col-sm-3" style="padding-top: 6px;">
+            <p style="font-size: 11px;"><b style="font-size: 17px;">{{post.username}}</b> <br>{{post.fecha | date: 'yyyy-MM-dd'}} - <i class="fas fa-address-card"></i> {{post.estado}}</p>                                    
+        </div>
+        <div class="container">
+            <p>{{post.post}}</p>
+        </div>        
+    </div>
+    <hr>
+</div>

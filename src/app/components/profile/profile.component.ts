@@ -58,8 +58,7 @@ export class ProfileComponent implements OnInit {
   avatar: any = [];
   sources: any;
 
-  getAvatar(){
-    
+  getAvatar(){    
     const imgID: any = this.User.avatar;
     this.avatars.getAvatarsByID(imgID).subscribe(
       res => {        

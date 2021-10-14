@@ -15,7 +15,9 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 
 import { UsersService } from './services/users.service';
 import { ChatComponent } from './components/chat/chat.component';
-import { PeopleComponent } from './components/people/people.component'
+import { PeopleComponent } from './components/people/people.component';
+import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
+import { PrivateComponent } from './components/private/private/private.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PeopleComponent } from './components/people/people.component'
     ProfileComponent,
     AboutMeComponent,
     ChatComponent,
-    PeopleComponent
+    PeopleComponent,
+    SolicitudesComponent,
+    PrivateComponent
   ],
   imports: [
     BrowserModule,

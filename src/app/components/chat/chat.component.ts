@@ -23,6 +23,7 @@ export class ChatComponent implements OnInit {
   ChatMesage: any = [];
 
   getFriends(){
+    //this.info.getName()
     this.friendsService.getAllFriends(this.info.getName()).subscribe(
       res => {
         console.log(res)
@@ -63,11 +64,19 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     this.getFriends();
     this.getChatMesage();
-    this.ChatUser = `- ${this.info.getChatName()}`;
-    
+    this.ChatUser = `- ${this.info.getChatName()}`;    
   }
-  
-  userChat(){
-    this.ChatUser = `- MelvinJG`;
+
+  CargarMensaje(user: string, id: string) {
+    this.ChatUser = `- ${user}`;
+    this.info.setChatName(user);
+    this.info.setIdChatName(id);
+    this.friendsService.getChatFriends(user).subscribe(
+      res => {
+        console.log(res)
+        this.ChatMesage = res;
+      },
+      err => console.error(err)
+    );
   }
 }

@@ -9,6 +9,8 @@ import { FriendsComponent } from './components/friends/friends.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { PeopleComponent } from './components/people/people.component';
+import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
+import { PrivateComponent } from './components/private/private/private.component'
 
 const routes: Routes = [
   {
@@ -54,6 +56,17 @@ const routes: Routes = [
   {
     path: 'People',
     component: PeopleComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'Solicitudes',
+    component: SolicitudesComponent,
+    pathMatch: 'full'
+  }
+  ,
+  {
+    path: 'Private',
+    component: PrivateComponent,
     pathMatch: 'full'
   }
 ];

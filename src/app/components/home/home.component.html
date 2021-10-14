@@ -1,20 +1,36 @@
 <app-navbar></app-navbar>
 <div class="row">
-    <div class="col-sm-3">
-        <img class="imagen" src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-businessman-user-avatar-character-vector-illustration-png-image_5415558.jpg" alt="">
+    <div class="col-sm-3" style="padding-top: 20px;">
+        <img class="imagen" src="{{sources}}" alt="">
     </div>
     <div class="col-sm-6" style="padding-top: 10px;">
-        <textarea name="description" placeholder="Que estas pensando¿?" rows="3" class="form-control"></textarea>        
+        <textarea name="description" [(ngModel)]="newPost.post" placeholder="Que estas pensando¿?" rows="3" class="form-control"></textarea>        
     </div>
-    <div class="col-sm-2" style="padding-top: 33px;">
+    <div class="col-sm-2" style="padding-top: 12px;">
         <div class="form-row">
-            <button class="btn btn-primary btn-block">
+            <select name="miselect" [(ngModel)]="seleccionado" class="btn btn-primary">                
+                <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+            </select>
+        </div>
+        <div class="form-row" style="padding-top: 10px;">        
+            <button class="btn btn-primary btn-block" (click)="publicar()" style="width: 102px;">
                 Publicar
             </button>
         </div>
     </div>
 </div>
-<div class="container">
-
-
+<br>
+<div class="container" *ngFor = 'let post of thePosts'>
+    <div class="row bordes" style="background-color: white;" >
+        <div class="col-sm-1" style="padding-top: 5px;">
+            <img class="imagenPeque" src="{{post.img}}">
+        </div>
+        <div class="col-sm-3" style="padding-top: 6px;">
+            <p style="font-size: 11px;"><b style="font-size: 17px;">{{post.username}}</b> <br>{{post.fecha | date: 'yyyy-MM-dd'}} - <i class="fas fa-address-card"></i> {{post.estado}}</p>                                    
+        </div>
+        <div class="container">
+            <p>{{post.post}}</p>
+        </div>        
+    </div>
+    <hr>
 </div>

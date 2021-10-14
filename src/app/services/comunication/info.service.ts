@@ -8,6 +8,7 @@ export class InfoService {
   Name: string = "";
   chatName: string= '';
   IdChatName: any;
+  MyIdUser: number = 0;
 
   @Output() UserName: EventEmitter<any> = new EventEmitter();
   constructor() { }
@@ -34,5 +35,13 @@ export class InfoService {
 
   getIdChatName(){
     return this.IdChatName;
+  }
+
+  setMyIdUser(MyIdUser: number) {
+    this.MyIdUser = MyIdUser;
+  }
+
+  getMyIdUser(){
+    return this.MyIdUser;
   }
 }

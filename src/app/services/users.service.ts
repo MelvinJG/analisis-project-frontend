@@ -12,6 +12,10 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
+  getMyId(userName: string){
+    return this.http.get(`${this.API}/MyId/${userName}`);
+  }
+
   getAllUsers(user: string){
     return this.http.get(`${this.API}/People/${user}`);
   }
